@@ -1,0 +1,17 @@
+{
+  "name": "my-project",
+  "version": "1.0.0",
+  "description": "My project description",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "Flask": "^3.0.2",
+    "openpyxl": "^3.1.2",
+    "pandas": "^2.2.1",
+    "numpy": "^1.26.4",
+    "pip": "^23.2.1"
+  }
+}
