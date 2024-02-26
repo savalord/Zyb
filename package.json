@@ -6,6 +6,5 @@
 "start": "python app.py"
 },
 "dependencies": {
-"@netlify/plugin-functions": "^1.0.0"
 }
 }
