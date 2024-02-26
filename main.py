@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, send_file
 import os
 import exsel as ex
 import Zip as z
@@ -28,7 +28,9 @@ def upload_file():
         return 'No file uploaded'
 
 
-
+@app.route('/download',methods=['GET'])
+def download_file():
+    return send_file('Наряд-заказы.zip', as_attachment=True)
 
 
 

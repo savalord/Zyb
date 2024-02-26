@@ -17,10 +17,36 @@
 </head>
 <body>
 <h1>Выберите файл для загрузки</h1>
-<form action="/upload" method="post" enctype="multipart/form-data" class="upload">
-    <input type="file" name="file"><br><br>
+<form action="/upload" method="post" enctype="multipart/form-data" class="upload" onsubmit="uploadFile(event)">
+    <input type="file" id="fileInput" name="file"><br><br>
     <input type="submit" value="Загрузить">
+</form>
+<form action="/download" method="get" class="download">
+    <input type="submit" value="Скачать">
 </form>
 </body>
 </html>
 
+<script>
+    function uploadFile(event) {
+        event.preventDefault();
+        const form = document.querySelector('.upload');
+        const formData = new FormData(form);
+
+        fetch('/upload', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => {
+            if (response.ok) {
+                form.reset(); // очистка формы
+                alert('Файл успешно загружен');
+            } else {
+                alert('Произошла ошибка при загрузке файла');
+            }
+        })
+        .catch(error => {
+            console.error('Ошибка:', error);
+        });
+    }
+</script>
