@@ -1,10 +1,11 @@
 {
-  "name": "my-project",
-  "version": "1.0.0",
-  "description": "My Python project",
-  "scripts": {
-    "start": "python app.py"
-  },
-  "dependencies": {
-  }
+"name": "my-project",
+"version": "1.0.0",
+"description": "My Python project",
+"scripts": {
+"start": "python app.py"
+},
+"dependencies": {
+"@netlify/plugin-functions": "^1.0.0"
+}
 }
