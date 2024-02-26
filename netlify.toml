@@ -1,5 +1,5 @@
 [build]
-  command = "python app.py"
+  command = "python main.py"
   publish = "templates"
 
 
