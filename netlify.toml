@@ -2,8 +2,5 @@
   command = "python app.py"
   publish = "templates"
 
-[[redirects]]
-  from = "/*"
-  to = "/upload.html"
-  status = 200
+
 
