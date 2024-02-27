@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Page Title</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Page Title</title>
+    <style> body { display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh; margin: 0; } form { display: flex; justify-content: center; align-items: center; } .upload { margin-right: 10px; } .buttons { display: flex; justify-content: center; } </style>
+</head>
+<body>
+<h1>Выберите файл для загрузки</h1>
+<form action="/upload" method="post" enctype="multipart/form-data" class="upload" onsubmit="uploadFile(event)">
+    <input type="file" id="fileInput" name="file"><br><br>
+    <input type="submit" value="Загрузить">
+</form>
+<form action="/download" method="get" class="download">
+    <input type="submit" value="Скачать">
+</form>
+</body>
+</html>
+
+<script>
+    function uploadFile(event) {
+        event.preventDefault();
+        const form = document.querySelector('.upload');
+        const formData = new FormData(form);
+
+        fetch('/upload', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => {
+            if (response.ok) {
+                form.reset(); // очистка формы
+                alert('Файл успешно загружен');
+            } else {
+                alert('Произошла ошибка при загрузке файла');
+            }
+        })
+        .catch(error => {
+            console.error('Ошибка:', error);
+        });
+    }
+</script>
