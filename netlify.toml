@@ -1,8 +1,9 @@
 [build]
   command = "python main.py"
 
-  publish = "/tempalates"
+  publish = "tempalates"
 
 
 [context.production]
+  command = "python main.py"
   command = "python main.py"
