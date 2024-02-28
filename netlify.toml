@@ -1,6 +1,6 @@
 [build]
   command = "python main.py"
-  publish = "templates"
+  publish = "/tempalates"
 
-
-
+[context.production]
+  command = "python main.py"
