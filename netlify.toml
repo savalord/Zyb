@@ -1,7 +1,7 @@
 [build]
   command = "python main.py"
 
-  publish = "tempalates"
+  publish = "static"
 
 
 [context.production]
