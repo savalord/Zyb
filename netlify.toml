@@ -1,8 +1,2 @@
 [build]
-  command = "python main.py"
-
-  publish = "static"
-
-
-[context.production]
-  command = "python main.py"
+  command = "python3 -m venv venv && source venv/bin/activate && pip install -r requirements.txt && python3 your_script.py"
