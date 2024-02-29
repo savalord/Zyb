@@ -1,2 +1,2 @@
 [build]
-  command = "python3 -m venv venv && source venv/bin/agit ctivate && pip install -r requirements.txt && python3 app.py"
+  publish = "static, templates, Exsel_Files"
